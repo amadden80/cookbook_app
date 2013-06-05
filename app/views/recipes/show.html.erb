@@ -1,0 +1,14 @@
+<h1><%= @recipe.name %></h1>
+<p>Course: <%= @recipe.course %></p>
+<p>Cooktime: <%= @recipe.cook_time %></p>
+<p>Instructions: <%= @recipe.instructions %></p>
+<img src='<%= @recipe.img_url %>' >
+<p>
+<% if @recipe.cookbook.present? %>
+  From Cookbook: <%= link_to @recipe.cookbook.title, @recipe.cookbook %>
+  <% else %>
+    Not yet published.
+  <% end %>
+</p>
+<%= button_to 'Edit', edit_recipe_path(@recipe), method: 'get' %>
+<%= button_to 'Delete', recipe_path(@recipe), method: 'delete' %>
