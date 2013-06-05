@@ -1,9 +1,9 @@
 Cookbook.delete_all
 Recipe.delete_all
 
-Cookbook.create(title: "The Joy of Cooking", cuisine: "Modern Fusion", description: "Good food!", isbn: 9780026045704)
-Cookbook.create(title: "The Joy of Cooking II", cuisine: "Moderner Fusion", description: "Better food!", isbn: 9780026045705)
-Cookbook.create(title: "The Joy of Cooking III", cuisine: "Modernest Fusion", description: "Bestest food!", isbn: 9780026045706)
+Cookbook.create(title: "The Joy of Cooking", cuisine: "Modern Fusion", description: "Good food!", isbn: 972)
+Cookbook.create(title: "The Joy of Cooking II", cuisine: "Moderner Fusion", description: "Better food!", isbn: 971)
+Cookbook.create(title: "The Joy of Cooking III", cuisine: "Modernest Fusion", description: "Bestest food!", isbn: 978)
 
 r1 = Recipe.new(name: 'Grilled Cheese', instructions: 'Grill some cheese', serving_size: 1, img_url: 'http://cdn.funcheap.com/wp-content/uploads/2013/04/grilled-cheese-sandwich11.jpg', course: 'lunch', cook_time: 5)
 
