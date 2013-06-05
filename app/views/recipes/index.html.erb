@@ -1,0 +1,18 @@
+<h1>Recipes</h1>
+<% @recipes.each do |recipe| %>
+  <p>
+      <%= recipe.name %>
+    </p>
+    <p>
+      Cooktime: <%= recipe.cook_time %>
+    </p>
+    <p>
+      Instructions: <%= recipe.instructions %>
+    </p>
+    <p>
+      <img src='<%= recipe.img_url %>' >
+    </p>
+    <p>
+      <%= recipe.course %>
+    </p>
+<% end %>
