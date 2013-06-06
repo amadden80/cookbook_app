@@ -17,4 +17,7 @@ class Cookbook < ActiveRecord::Base
   has_many :recipes, inverse_of: :cookbook
   has_many :ingredients, through: :recipes
 
+  validates_uniqueness_of :title, :isbn
+
+
 end
