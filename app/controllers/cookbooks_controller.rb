@@ -13,10 +13,12 @@ class CookbooksController < ApplicationController
 
   def new
     @cookbook = Cookbook.new
+    @recipes = Recipe.all
   end
 
   def edit
     @cookbook = Cookbook.find(params[:id])
+    @recipes = Recipe.all
   end
 
   def show
@@ -24,6 +26,7 @@ class CookbooksController < ApplicationController
   end
 
   def update
+    binding.pry
     cookbook = Cookbook.find(params[:id])
     if cookbook.update_attributes(params[:cookbook])
       redirect_to cookbooks_path

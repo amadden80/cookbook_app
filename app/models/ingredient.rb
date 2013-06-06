@@ -10,8 +10,9 @@
 #
 
 class Ingredient < ActiveRecord::Base
-  attr_accessible :measurement, :name
+  attr_accessible :measurement, :name, :recipe_ids
 
   has_and_belongs_to_many :recipes
+  has_many :cookbooks, through: :recipes
 
 end

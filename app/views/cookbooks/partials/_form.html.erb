@@ -5,5 +5,11 @@
   <%= f.text_field :cuisine %><br />
   <%= f.label :description %>:
   <%= f.text_field :description %>
+
+  <% @recipes.each do |recipe| %>
+    <span><%= recipe.name %></span>
+    <%= check_box_tag 'cookbook[recipe_ids][]', recipe.id, recipe.in?(@cookbook.recipes.to_a) %>
+  <% end %>
+
   <%= f.submit %>
 <% end %>

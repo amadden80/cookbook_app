@@ -5,5 +5,10 @@
   <%= f.label :measurement %>
   <%= f.text_field :measurement %>
 
+  <% @recipes.each do |recipe| %>
+    <span><%= recipe.name %></span>
+    <%= check_box_tag 'ingredient[recipe_ids][]', recipe.id, recipe.in?(@ingredient.recipes.to_a) %>
+  <% end %>
+
   <%= f.submit %>
 <% end %>

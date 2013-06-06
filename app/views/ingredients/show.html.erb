@@ -1,5 +1,16 @@
 <h1><%= @ingredient.name%></h1>
 <p>Measurement: <%= @ingredient.measurement %></p>
 
+<p>
+  Used in:
+  <ul>
+    <% @ingredient.recipes.each do |recipe|%>
+      <li>
+        <%= recipe.name %>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
 <%= button_to 'Edit', edit_ingredient_path(@ingredient), method: 'get' %>
 <%= button_to 'Delete', ingredient_path(@ingredient), method: 'delete' %>
