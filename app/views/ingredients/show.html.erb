@@ -1,0 +1,5 @@
+<h1><%= @ingredient.name%></h1>
+<p>Measurement: <%= @ingredient.measurement %></p>
+
+<%= button_to 'Edit', edit_ingredient_path(@ingredient), method: 'get' %>
+<%= button_to 'Delete', ingredient_path(@ingredient), method: 'delete' %>
