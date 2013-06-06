@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
       redirect_to recipes_path
     else
       redirect_to new_recipe_path
+      # render :new
     end
   end
 

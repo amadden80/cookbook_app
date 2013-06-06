@@ -18,6 +18,7 @@ class Recipe < ActiveRecord::Base
   attr_accessible :cook_time, :course, :img_url, :instructions, :name, :serving_size, :cookbook_id
 
   belongs_to :cookbook, inverse_of: :recipes
+  has_and_belongs_to_many :ingredients
 
 
 end

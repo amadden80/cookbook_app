@@ -1,5 +1,6 @@
 Cookbook.delete_all
 Recipe.delete_all
+Ingredient.delete_all
 
 c1 = Cookbook.create(title: "The Joy of Cooking", cuisine: "Modern Fusion", description: "Good food!", isbn: 972)
 c2 = Cookbook.create(title: "The Joy of Cooking II", cuisine: "Moderner Fusion", description: "Better food!", isbn: 971)
@@ -18,18 +19,10 @@ r5 = Recipe.new(name: 'Bison Burger', instructions: 'Kill a bison and cook it', 
 c1.recipes << r1 << r2 << r5
 c2.recipes << r3 << r4
 
-#OR (not as flexible)
-# c1.recipes = [r1, r2, r5]
-# c2.recipes = [r3, r4]
+i1 = Ingredient.create(name: 'egg', measurement: 'egg')
+i2 = Ingredient.create(name: 'noodles', measurement: 'ounce')
+i3 = Ingredient.create(name: 'cheese', measurement: 'ounce')
 
-#OR (too verbose)
-# r1.cookbook = c1
-# r1.save
-# r2.cookbook = c1
-# r2.save
-# r5.cookbook = c1
-# r5.save
-# r3.cookbook = c2
-# r3.save
-# r4.cookbook = c2
-# r4.save
+r1.ingredients << i3
+r2.ingredients << i1 << i2
+r5.ingredients << i3
