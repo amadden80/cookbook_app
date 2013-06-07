@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CookbookApp</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <%= render partial: '/layouts/partials/nav' %>
-<%= yield %>
+    <meta charset="utf-8" >
+    <meta content="width=device-width", name="viewport">
+    <title>CookbookApp</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-</body>
+    <%= render partial: '/layouts/partials/nav' %>
+    <%= yield %>
+
+  </body>
 </html>

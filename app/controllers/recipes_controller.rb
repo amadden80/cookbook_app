@@ -16,10 +16,12 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @ingredients = Ingredient.all
   end
 
   def edit
     @recipe = Recipe.find(params[:id])
+    @ingredients = Ingredient.all
   end
 
   def show

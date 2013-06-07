@@ -19,5 +19,10 @@
   <%= f.label :cookbook_id %>
   <%= f.select :cookbook_id, Cookbook.all.map{ |cookbook| [cookbook.title, cookbook.id] } %>
 
+<% @ingredients.each do |ingredient| %>
+    <span><%= ingredient.name %></span>
+    <%= check_box_tag 'recipe[ingredient_ids][]', ingredient.id, ingredient.in?(@recipe.ingredients.to_a) %>
+    <% end %>
+
   <%= f.submit %>
 <% end %>
